@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Gridea</title>
+<title>凯撒密码的C#编程实现 | Gridea</title>
 <meta name="description" content="商务网站建设与维护">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://aswellas.github.io">Gridea</a></h3>
@@ -76,73 +77,90 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>凯撒密码的C#编程实现</h1>
+            <p class="article-meta">
+              2019-08-28
+              
+                <a href="https://aswellas.github.io/tag/Cyber_Security" class="badge ">
+                  信息安全
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
+   现假定密钥(Enciphering Key)为3，对原始字段DOG(plaintext)进行加密，加密后的密文为GRJ(ciphertext)。
+</code></pre>
+<!-- more -->
+<pre><code>private void btn_Encrypt_Click(object sender, EventArgs e)
+        {
+            string str = richTextBox_Input.Text;
+            int key = Convert.ToInt32(comboBox_Key.Text);
+            string result=Encrypt(str, key);
+            richTextBox_Output.Text = result;
+
+        }
+
+        private void btn_Decrypt_Click(object sender, EventArgs e)
+        {
+            string str = richTextBox_Input.Text;
+            int key = Convert.ToInt32(comboBox_Key.Text);
+            string result = Decrypt(str, key);
+            richTextBox_Output.Text = result;
+        }
+
+        public static char Cipher(char ch, int key)
+        {
+            if (!char.IsLetter(ch))
+            {
+                return ch;
+            }
+
+            char d = char.IsUpper(ch) ? 'A' : 'a';
+            return (char)((ch + key - d) % 26 + d);
+        }
+
+
+        public static string Encrypt(string input, int key)
+        {
+            string output = string.Empty;
+
+            foreach (char ch in input)
+                output += Cipher(ch, key);
+
+            return output;
+        }
+
+        public static string Decrypt(string input, int key)
+        {
+            return Encrypt(input, 26 - key);
+        }
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian">凯撒密码的C#编程实现</a>
-    </h2>
-    <p class="article-meta">
-      2019-08-28
-      
-        <a href="https://aswellas.github.io/tag/Cyber_Security" class="badge ">
-          信息安全
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
-   现假定密钥(Enciphering Key)为3，对原始字段DOG(plaintext)进行加密，加密后的密文为GRJ(ciphertext)。</code></pre>
-
-    </p>
-    <div class="row">
-      <a href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://aswellas.github.io/post/hello-gridea">Hello Gridea</a>
-    </h2>
-    <p class="article-meta">
-      2018-12-12
-      
-        <a href="https://aswellas.github.io/tag/bKiMRqLIw" class="badge secondary">
-          Gridea
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-    </p>
-    <div class="row">
-      <a href="https://aswellas.github.io/post/hello-gridea" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://aswellas.github.io/post/hello-gridea">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
+          
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
-
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://aswellas.github.io/images/avatar.png?v=1566975293968" class="no-responsive avatar">
@@ -189,11 +207,11 @@
     </div>
     <div class="row">
       
-        <a href="https://aswellas.github.io/tag/Cyber_Security" class="badge success">
+        <a href="https://aswellas.github.io/tag/Cyber_Security" class="badge secondary">
           信息安全
         </a>
       
-        <a href="https://aswellas.github.io/tag/bKiMRqLIw" class="badge success">
+        <a href="https://aswellas.github.io/tag/bKiMRqLIw" class="badge secondary">
           Gridea
         </a>
       
@@ -204,7 +222,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
