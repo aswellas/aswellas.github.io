@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566976181449">
+<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566976791286">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://aswellas.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://aswellas.github.io">
-        <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566976181449" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566976791286" alt="" width="32px" height="32px">
       </a>
       <a href="https://aswellas.github.io">
         <h1 class="site-title">Gridea</h1>
@@ -99,50 +99,42 @@
             <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
    现假定密钥(Enciphering Key)为3，对原始字段DOG(plaintext)进行加密，加密后的密文为GRJ(ciphertext)。
 </code></pre>
-<!-- more -->
-<pre><code>private void btn_Encrypt_Click(object sender, EventArgs e)
-        {
-            string str = richTextBox_Input.Text;
-            int key = Convert.ToInt32(comboBox_Key.Text);
-            string result=Encrypt(str, key);
-            richTextBox_Output.Text = result;
+<pre><code>private void btn_Encrypt_Click (object sender, EventArgs e) {
+    string str = richTextBox_Input.Text;
+    int key = Convert.ToInt32 (comboBox_Key.Text);
+    string result = Encrypt (str, key);
+    richTextBox_Output.Text = result;
 
-        }
+}
 
-        private void btn_Decrypt_Click(object sender, EventArgs e)
-        {
-            string str = richTextBox_Input.Text;
-            int key = Convert.ToInt32(comboBox_Key.Text);
-            string result = Decrypt(str, key);
-            richTextBox_Output.Text = result;
-        }
+private void btn_Decrypt_Click (object sender, EventArgs e) {
+    string str = richTextBox_Input.Text;
+    int key = Convert.ToInt32 (comboBox_Key.Text);
+    string result = Decrypt (str, key);
+    richTextBox_Output.Text = result;
+}
 
-        public static char Cipher(char ch, int key)
-        {
-            if (!char.IsLetter(ch))
-            {
-                return ch;
-            }
+public static char Cipher (char ch, int key) {
+    if (!char.IsLetter (ch)) {
+        return ch;
+    }
 
-            char d = char.IsUpper(ch) ? 'A' : 'a';
-            return (char)((ch + key - d) % 26 + d);
-        }
+    char d = char.IsUpper (ch) ? 'A' : 'a';
+    return (char) ((ch + key - d) % 26 + d);
+}
 
+public static string Encrypt (string input, int key) {
+    string output = string.Empty;
 
-        public static string Encrypt(string input, int key)
-        {
-            string output = string.Empty;
+    foreach (char ch in input)
+        output += Cipher (ch, key);
 
-            foreach (char ch in input)
-                output += Cipher(ch, key);
+    return output;
+}
 
-            return output;
-        }
-
-        public static string Decrypt(string input, int key)
-        {
-            return Encrypt(input, 26 - key);
-        }
+public static string Decrypt (string input, int key) {
+    return Encrypt (input, 26 - key);
+}
 </code></pre>
 
           </div>
