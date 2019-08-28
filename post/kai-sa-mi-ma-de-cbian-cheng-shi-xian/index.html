@@ -7,7 +7,7 @@
 <title>
     凯撒密码的C#编程实现 | Gridea
 </title>
-<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566982289689">
+<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566990363229">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -28,7 +28,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://aswellas.github.io">
-                <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566982289689" alt="">
+                <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566990363229" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -105,53 +105,56 @@
                             <time class="post-time">2019-08-28</time>
                             
                                 <a href="https://aswellas.github.io/tag/Cyber_Security" class="post-tag i-tag
-                            i-tag-error">
+                            i-tag-info">
                             #信息安全
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
+                                    <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。
+		 &lt;!-- more --&gt;
+		 这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
    现假定密钥(Enciphering Key)为3，对原始字段DOG(plaintext)进行加密，加密后的密文为GRJ(ciphertext)。
 </code></pre>
-<pre><code>private void btn_Encrypt_Click (object sender, EventArgs e) {
-    string str = richTextBox_Input.Text;
-    int key = Convert.ToInt32 (comboBox_Key.Text);
-    string result = Encrypt (str, key);
-    richTextBox_Output.Text = result;
-
-}
-
-private void btn_Decrypt_Click (object sender, EventArgs e) {
-    string str = richTextBox_Input.Text;
-    int key = Convert.ToInt32 (comboBox_Key.Text);
-    string result = Decrypt (str, key);
-    richTextBox_Output.Text = result;
-}
-
-public static char Cipher (char ch, int key) {
-    if (!char.IsLetter (ch)) {
-        return ch;
-    }
-
-    char d = char.IsUpper (ch) ? 'A' : 'a';
-    return (char) ((ch + key - d) % 26 + d);
-}
-
-public static string Encrypt (string input, int key) {
-    string output = string.Empty;
-
-    foreach (char ch in input)
-        output += Cipher (ch, key);
-
-    return output;
-}
-
-public static string Decrypt (string input, int key) {
-    return Encrypt (input, 26 - key);
-}
+<p>&quot;&quot;&quot;cs<br>
+private void btn_Encrypt_Click (object sender, EventArgs e) {<br>
+string str = richTextBox_Input.Text;<br>
+int key = Convert.ToInt32 (comboBox_Key.Text);<br>
+string result = Encrypt (str, key);<br>
+richTextBox_Output.Text = result;</p>
+<pre><code>            }
+            
+            private void btn_Decrypt_Click (object sender, EventArgs e) {
+                string str = richTextBox_Input.Text;
+                int key = Convert.ToInt32 (comboBox_Key.Text);
+                string result = Decrypt (str, key);
+                richTextBox_Output.Text = result;
+            }
+            
+            public static char Cipher (char ch, int key) {
+                if (!char.IsLetter (ch)) {
+                    return ch;
+                }
+            
+                char d = char.IsUpper (ch) ? 'A' : 'a';
+                return (char) ((ch + key - d) % 26 + d);
+            }
+            
+            public static string Encrypt (string input, int key) {
+                string output = string.Empty;
+            
+                foreach (char ch in input)
+                    output += Cipher (ch, key);
+            
+                return output;
+            }
+            
+            public static string Decrypt (string input, int key) {
+                return Encrypt (input, 26 - key);
+            }
 </code></pre>
+<p>&quot;&quot;&quot;</p>
 
                                 </div>
                     </article>
@@ -177,7 +180,7 @@ public static string Decrypt (string input, int key) {
                                 <!-- id-card -->
                                 
     <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://aswellas.github.io/images/avatar.png?v=1566982289689)">
+        <div class="id_card-avatar" style="background-image: url(https://aswellas.github.io/images/avatar.png?v=1566990363229)">
         </div>
         <h1 class="id_card-title">
             Gridea
