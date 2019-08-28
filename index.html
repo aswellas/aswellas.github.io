@@ -1,340 +1,195 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Gridea
-</title>
-<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566991874424">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<title>Gridea</title>
+<meta name="description" content="商务网站建设与维护">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566997042245">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://aswellas.github.io/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://aswellas.github.io/media/js/jquery.sticky-sidebar.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
-</head>
 
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://aswellas.github.io">
-                <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566991874424" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    Gridea
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    文章汇总
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://aswellas.github.io">
+        <img src="https://aswellas.github.io/images/avatar.png?v=1566997042245" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            文章汇总
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      商务网站建设与维护
+    </div>
+    <div class="site-footer">
+      University of Shanghai for Science and Technology | <a class="rss" href="https://aswellas.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
-
-        });
-    });
-</script>
-
-            <div id="main-content" class="post-container main-container">
-                <div id="content" class="main-container-left">
-                    
-        
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://aswellas.github.io/post/xin-wen-zhang-2">
-                        新文章2
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-28</time>
-                    
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://aswellas.github.io/post/xin-wen-zhang-2">
+                  <h2 class="post-title">新文章2</h2>
+                </a>
+                <div class="post-date">
+                  2019-08-28
                 </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            新文章2
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://aswellas.github.io/post/xin-wen-zhang-2">Read More ~</a>
-                            </div>
+                <div class="post-abstract">
+                  
                 </div>
+              </div>
+              
             </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://aswellas.github.io/post/xin-wen-zhang-1">
-                        新文章1
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-28</time>
-                    
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://aswellas.github.io/post/xin-wen-zhang-1">
+                  <h2 class="post-title">Intellij IDEA中Tomcat服务器的简易配置</h2>
+                </a>
+                <div class="post-date">
+                  2019-08-28
                 </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            
+                <div class="post-abstract">
+                  <p>Java Servlet JSP Intellij Tomcat8</p>
 
-
-联系人
-电话
-
-
-
-
-张三
-13456789
-
-
-李四
-1234567890
-
-
-
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://aswellas.github.io/post/xin-wen-zhang-1">Read More ~</a>
-                            </div>
                 </div>
+              </div>
+              
             </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian">
-                        凯撒密码
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2019-08-28</time>
-                    
-                        <a href="https://aswellas.github.io/tag/Cyber_Security" class="post-tag i-tag
-                            i-tag-other_2">
-            #信息安全
-        </a>
-                        
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian">
+                  <h2 class="post-title">凯撒密码的简易编程实现</h2>
+                </a>
+                <div class="post-date">
+                  2019-08-28
                 </div>
-                <div class="post-article">
-                    
-                            <div class="post-content">
-                                
-                                        <div class="post-content-content">
-                                            凯撒密码的C#编程实现
-核心代码
-private void btn_Encrypt_Click (object sender, EventArgs e) {
-    string str = richTextBox_Input.Text;
-    int key = Convert.ToInt32 (comboBox_Key.Text);
-    string result = Encrypt (str, key);
-    richTextBox_Output.Text = result;
+                <div class="post-abstract">
+                  <p>凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。</p>
 
-}
-
-private void btn_Decrypt_Click (object sender, EventArgs e) {
-    string str = richTextBox_Input.Text;
-    int key = Convert.ToInt32 (comboBox_Key.Text);
-    string result = Decrypt (str, key);
-    richTextBox_Output.Text = result;
-}
-
-public static char Cipher (char ch, int key) {
-    if (!char.IsLetter (ch)) {
-        return ch;
-    }
-
-    char d = char.IsUpper (ch) ? &#39;A&#39; : &#39;a&#39;;
-    return (char) ((ch + key - d) % 26 + d);
-}
-
-public static string Encrypt (string input, int key) {
-    string output = string.Empty;
-
-    foreach (char ch in input)
-        output += Cipher (ch, key);
-
-    return output;
-}
-
-public static string Decrypt (string input, int key) {
-    return Encrypt (input, 26 - key);
-}
-
-运行示例
-
-对凯撒密码的解释
-文字与图表解释
-Content
-程序代码示意
-内容
-
-                                        </div>
-                                        
-                                            <a class="btn btn-text" href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian">Read More ~</a>
-                            </div>
                 </div>
+              </div>
+              
             </article>
-            
-            <article class="post i-card">
-                <h2 class="post-title">
-                    <a href="https://aswellas.github.io/post/hello-gridea">
-                        Hello Gridea
-                    </a>
-                </h2>
-                <div class="post-info">
-                    <time class="post-time">2018-12-12</time>
-                    
-                        <a href="https://aswellas.github.io/tag/bKiMRqLIw" class="post-tag i-tag
-                            i-tag-other_2">
-            #Gridea
-        </a>
-                        
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://aswellas.github.io/post/hello-gridea">
+                  <h2 class="post-title">Hello Gridea</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-12
                 </div>
-                <div class="post-article">
-                    
-                        <a href="https://aswellas.github.io/post/hello-gridea" class="post-feature-image" style="background-image:url(https://aswellas.github.io/post-images/hello-gridea.png) ">
-                        </a>
-                        
-                            <div class="post-content">
-                                
-                                    <div class="post-content-abstract">
-                                        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+                <div class="post-abstract">
+                  <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
-                                    </div>
-                                    
-                                            <a class="btn btn-text" href="https://aswellas.github.io/post/hello-gridea">Read More ~</a>
-                            </div>
                 </div>
+              </div>
+              
+                <a class="right" href="https://aswellas.github.io/post/hello-gridea">
+                  <div class="feature-container" style="background-image: url('https://aswellas.github.io/post-images/hello-gridea.png')">
+                  </div>
+                </a>
+              
             </article>
-            
-                <!-- 翻页 -->
-                
-                </div>
-                <!--  -->
-                <div class="main-container-middle"></div>
-                <!--  -->
-                <div id="sidebar" class="main-container-right">
+          
 
-                    <!-- 个人信息 -->
-                    
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://aswellas.github.io/images/avatar.png?v=1566991874424)">
-        </div>
-        <h1 class="id_card-title">
-            Gridea
-        </h1>
-        <h2 class="id_card-description">
-            商务网站建设与维护
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
-
-        </div>
-    </div>
-    
-
-                        <!-- 公告栏 -->
-                        
-    <div class="notice-card i-card ">
-        <div class="notice-title i-card-title">公告</div>
-        <div class="notice-content">
-            No:1234567890
-Name:John
-        </div>
-    </div>
-    
-
-                </div>
-            </div>
-
-
-
-            <div class="site-footer">
-  University of Shanghai for Science and Technology | 
-  <a class="rss" href="https://aswellas.github.io/atom.xml" target="_blank">RSS</a>
+          <div class="pagination-container">
+  
+  
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-    </div>
-    <script>
-        $('#sidebar').stickySidebar({
-            topSpacing: 80,
-            // bottomSpacing: 60
-        });
-    </script>
-</body>
 
+
+
+  </body>
 </html>
