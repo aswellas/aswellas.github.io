@@ -5,9 +5,9 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>
-    凯撒密码的C#编程实现 | Gridea
+    凯撒密码 | Gridea
 </title>
-<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566990937599">
+<link rel="shortcut icon" href="https://aswellas.github.io/favicon.ico?v=1566991874424">
 <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -28,7 +28,7 @@
     <div class="nav">
         <div class="logo">
             <a href="https://aswellas.github.io">
-                <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566990937599" alt="">
+                <img class="avatar" src="https://aswellas.github.io/images/avatar.png?v=1566991874424" alt="">
             </a>
             <div class="site-title">
                 <h1>
@@ -99,62 +99,65 @@
                 <div id="content" class="main-container-left">
                     <article class="post i-card">
                         <h2 class="post-title">
-                            凯撒密码的C#编程实现
+                            凯撒密码
                         </h2>
                         <div class="post-info">
                             <time class="post-time">2019-08-28</time>
                             
                                 <a href="https://aswellas.github.io/tag/Cyber_Security" class="post-tag i-tag
-                            i-tag-other_3">
+                            i-tag-error">
                             #信息安全
                         </a>
                                 
                         </div>
                         
                                 <div class="post-content">
-                                    <pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。
-		 &lt;!-- more --&gt;
-		 这个固定数目可以被称为加密密钥，其取值范围为[0,25]。当取值为0时，明文没有进行任何加密；由于字母表中一共有26个字母，因此取值为26时，明文也相当于没有被加密。
-   现假定密钥(Enciphering Key)为3，对原始字段DOG(plaintext)进行加密，加密后的密文为GRJ(ciphertext)。
+                                    <h1 id="凯撒密码的c编程实现">凯撒密码的C#编程实现</h1>
+<h2 id="核心代码">核心代码</h2>
+<pre><code class="language-csharp">private void btn_Encrypt_Click (object sender, EventArgs e) {
+    string str = richTextBox_Input.Text;
+    int key = Convert.ToInt32 (comboBox_Key.Text);
+    string result = Encrypt (str, key);
+    richTextBox_Output.Text = result;
+
+}
+
+private void btn_Decrypt_Click (object sender, EventArgs e) {
+    string str = richTextBox_Input.Text;
+    int key = Convert.ToInt32 (comboBox_Key.Text);
+    string result = Decrypt (str, key);
+    richTextBox_Output.Text = result;
+}
+
+public static char Cipher (char ch, int key) {
+    if (!char.IsLetter (ch)) {
+        return ch;
+    }
+
+    char d = char.IsUpper (ch) ? 'A' : 'a';
+    return (char) ((ch + key - d) % 26 + d);
+}
+
+public static string Encrypt (string input, int key) {
+    string output = string.Empty;
+
+    foreach (char ch in input)
+        output += Cipher (ch, key);
+
+    return output;
+}
+
+public static string Decrypt (string input, int key) {
+    return Encrypt (input, 26 - key);
+}
 </code></pre>
-<p>&quot;&quot;&quot;cs<br>
-private void btn_Encrypt_Click (object sender, EventArgs e) {<br>
-string str = richTextBox_Input.Text;<br>
-int key = Convert.ToInt32 (comboBox_Key.Text);<br>
-string result = Encrypt (str, key);<br>
-richTextBox_Output.Text = result;</p>
-<pre><code>            }
-            
-            private void btn_Decrypt_Click (object sender, EventArgs e) {
-                string str = richTextBox_Input.Text;
-                int key = Convert.ToInt32 (comboBox_Key.Text);
-                string result = Decrypt (str, key);
-                richTextBox_Output.Text = result;
-            }
-            
-            public static char Cipher (char ch, int key) {
-                if (!char.IsLetter (ch)) {
-                    return ch;
-                }
-            
-                char d = char.IsUpper (ch) ? 'A' : 'a';
-                return (char) ((ch + key - d) % 26 + d);
-            }
-            
-            public static string Encrypt (string input, int key) {
-                string output = string.Empty;
-            
-                foreach (char ch in input)
-                    output += Cipher (ch, key);
-            
-                return output;
-            }
-            
-            public static string Decrypt (string input, int key) {
-                return Encrypt (input, 26 - key);
-            }
-</code></pre>
-<p>&quot;&quot;&quot;</p>
+<h2 id="运行示例">运行示例</h2>
+<p><img src="https://aswellas.github.io/post-images/1566991705866.jpg" alt=""></p>
+<h1 id="对凯撒密码的解释">对凯撒密码的解释</h1>
+<h2 id="文字与图表解释">文字与图表解释</h2>
+<p>Content</p>
+<h2 id="程序代码示意">程序代码示意</h2>
+<p>内容</p>
 
                                 </div>
                     </article>
@@ -177,32 +180,53 @@ richTextBox_Output.Text = result;</p>
                 <!-- right -->
                 <div id="sidebar" class="main-container-right">
                     
-                                <!-- id-card -->
-                                
-    <div class="id_card i-card">
-        <div class="id_card-avatar" style="background-image: url(https://aswellas.github.io/images/avatar.png?v=1566990937599)">
-        </div>
-        <h1 class="id_card-title">
-            Gridea
-        </h1>
-        <h2 class="id_card-description">
-            商务网站建设与维护
-        </h2>
-        <!--  -->
-        <div class="id_card-sns">
-            <!-- github -->
-            
-                    <!-- twitter -->
-                    
-                            <!-- weibo -->
-                            
-                                    <!-- facebook -->
-                                    
+                        <!-- toc -->
+                        
+    <div class="toc-card i-card ">
+        <div class="toc-title i-card-title">目录</div>
+        <div class="toc-content">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84c%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0">凯撒密码的C#编程实现</a>
+<ul>
+<li><a href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81">核心代码</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%A4%BA%E4%BE%8B">运行示例</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AF%B9%E5%87%AF%E6%92%92%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E9%87%8A">对凯撒密码的解释</a>
+<ul>
+<li><a href="#%E6%96%87%E5%AD%97%E4%B8%8E%E5%9B%BE%E8%A1%A8%E8%A7%A3%E9%87%8A">文字与图表解释</a></li>
+<li><a href="#%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%E7%A4%BA%E6%84%8F">程序代码示意</a></li>
+</ul>
+</li>
+</ul>
 
         </div>
+        <script>
+            function locateCatelogList() {
+                /*获取文章目录集合,可通过:header过滤器*/
+                var alis = $('.post-content :header');
+                /*获取侧边栏目录列表集合**/
+                var sidebar_alis = $('.markdownIt-TOC a');
+                /*获取滚动条到顶部的距离*/
+                var scroll_height = $(window).scrollTop();
+                for (var i = 0; i < alis.length; i++) {
+                    /*获取锚点集合中的元素分别到顶点的距离*/
+                    var a_height = $(alis[i]).offset().top;
+                    if (a_height < scroll_height) {
+                        /*高亮显示*/
+                        sidebar_alis.removeClass('on');
+                        $(sidebar_alis[i]).addClass('on');
+                    }
+                }
+            }
+            $(function() {
+                /*绑定滚动事件 */
+                $(window).bind('scroll', locateCatelogList);
+            });
+        </script>
     </div>
     
-                                    
+                            
 
                 </div>
 

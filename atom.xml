@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aswellas.github.io</id>
     <title>Gridea</title>
-    <updated>2019-08-28T11:15:39.302Z</updated>
+    <updated>2019-08-28T11:31:26.362Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aswellas.github.io"/>
     <link rel="self" href="https://aswellas.github.io/atom.xml"/>
@@ -25,15 +25,11 @@
         <updated>2019-08-28T08:50:27.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[凯撒密码的C#编程实现]]></title>
+        <title type="html"><![CDATA[凯撒密码]]></title>
         <id>https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian</id>
         <link href="https://aswellas.github.io/post/kai-sa-mi-ma-de-cbian-cheng-shi-xian">
         </link>
         <updated>2019-08-28T06:44:04.000Z</updated>
-        <summary type="html"><![CDATA[<pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<pre><code>   凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。</code></pre>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
