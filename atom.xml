@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aswellas.github.io</id>
     <title>Gridea</title>
-    <updated>2019-09-03T00:38:04.366Z</updated>
+    <updated>2019-09-03T02:21:20.722Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aswellas.github.io"/>
     <link rel="self" href="https://aswellas.github.io/atom.xml"/>
@@ -11,9 +11,34 @@
     <icon>https://aswellas.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Gridea</rights>
     <entry>
+        <title type="html"><![CDATA[上理风光]]></title>
+        <id>https://aswellas.github.io/post/shang-li-feng-guang</id>
+        <link href="https://aswellas.github.io/post/shang-li-feng-guang">
+        </link>
+        <updated>2019-09-03T02:16:25.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JAVA集合类之ArrayList]]></title>
+        <id>https://aswellas.github.io/post/java-ji-he-lei-zhi-arraylist</id>
+        <link href="https://aswellas.github.io/post/java-ji-he-lei-zhi-arraylist">
+        </link>
+        <updated>2019-09-03T01:58:27.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Windows Server 2003 建立FTP服务器]]></title>
+        <id>https://aswellas.github.io/post/shi-yong-windows-server-2003-jian-li-ftp-fu-wu-qi</id>
+        <link href="https://aswellas.github.io/post/shi-yong-windows-server-2003-jian-li-ftp-fu-wu-qi">
+        </link>
+        <updated>2019-09-03T01:42:41.000Z</updated>
+        <summary type="html"><![CDATA[<p>文件传输协议（File Transfer Protocol，FTP）是用于在网络上进行文件传输的一套标准协议，它工作在 OSI 模型的第七层， TCP 模型的第四层， 即应用层， 使用 TCP 传输而不是 UDP， 客户在和服务器建立连接前要经过一个“三次握手”的过程， 保证客户与服务器之间的连接是可靠的， 而且是面向连接， 为数据传输提供可靠保证。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>文件传输协议（File Transfer Protocol，FTP）是用于在网络上进行文件传输的一套标准协议，它工作在 OSI 模型的第七层， TCP 模型的第四层， 即应用层， 使用 TCP 传输而不是 UDP， 客户在和服务器建立连接前要经过一个“三次握手”的过程， 保证客户与服务器之间的连接是可靠的， 而且是面向连接， 为数据传输提供可靠保证。</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[对UGC视频网站内容创作者的社会网络分析及思考]]></title>
-        <id>https://aswellas.github.io/post/xin-wen-zhang-2</id>
-        <link href="https://aswellas.github.io/post/xin-wen-zhang-2">
+        <id>https://aswellas.github.io/post/ugc-social-network</id>
+        <link href="https://aswellas.github.io/post/ugc-social-network">
         </link>
         <updated>2019-08-28T08:50:44.000Z</updated>
         <summary type="html"><![CDATA[<p>本文以哔哩哔哩 3C 产品相关的视频创作者为研究样本，着重探究其中的社会关系，并尝试找出该视频网站中“3C 圈”的意见领袖及其UGC 内容的特点。</p>
@@ -41,19 +66,6 @@
         <summary type="html"><![CDATA[<p>凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>凯撒密码又名凯撒变换、变换加密，顾名思义就是明文中的所有字母都在字母表上向后或向前按照一个固定数目进行偏移后产生密文。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://aswellas.github.io/post/hello-gridea</id>
-        <link href="https://aswellas.github.io/post/hello-gridea">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 ]]></content>
     </entry>
 </feed>
